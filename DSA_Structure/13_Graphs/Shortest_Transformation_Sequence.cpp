@@ -16,6 +16,10 @@ int shortestTransformationSequence(const string& start, const string& target, co
     if(start==target)return 1;
 
     unordered_set<string>st(dictionary.begin(),dictionary.end());
+
+    if(st.find(target)==st.end()){
+        return 0;
+    }
     queue<pair<string,int>>q;
     unordered_set<string>visited;
     q.push({start,1});
